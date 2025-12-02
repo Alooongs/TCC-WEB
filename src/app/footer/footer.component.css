@@ -1,16 +1,16 @@
 .footer-container {
-  background-color: #025940; /* verde escuro */
-  color: #ffffff; /* texto branco */
-  padding: 30px 20px;
+  background-color: #025940;
+  color: #ffffff;
+  padding: 25px 20px;
   text-align: center;
   position: relative;
 }
 
 .footer-container p {
   margin: 0;
-  font-size: 15px;
+  font-size: 14px; /* Ligeiramente menor para mobile */
   font-weight: 500;
-  color: #f1f1f1; /* cinza bem claro pro © */
+  color: #f1f1f1;
 }
 
 .footer-icons {
@@ -18,27 +18,65 @@
 }
 
 .footer-icons mat-icon {
-  margin: 0 12px;
-  font-size: 28px;
+  margin: 0 10px;
+  font-size: 26px;
   cursor: pointer;
-  color: #f1f1f1; /* ícones brancos */
+  color: #f1f1f1;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-icons mat-icon:hover {
-  transform: scale(1.15); /* efeito de zoom */
+  transform: scale(1.15);
 }
 
 .footer-links {
   margin-top: 18px;
+  display: flex;
+  flex-direction: column; /* Empilhado por padrão */
+  gap: 12px; /* Espaçamento entre links */
 }
 
 .footer-links a {
-  margin: 0 16px;
-  color: #e0e0e0; /* cinza claro */
+  color: #e0e0e0;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
+/* Media Query para Telas Maiores */
+@media (min-width: 768px) {
+  .footer-container {
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-container p {
+    font-size: 15px;
+    order: 1; /* Ordem do copyright */
+  }
+
+  .footer-icons {
+    margin-top: 0;
+    order: 2; /* Ordem dos ícones */
+  }
+
+  .footer-icons mat-icon {
+    margin: 0 12px;
+    font-size: 28px;
+  }
+
+  .footer-links {
+    margin-top: 0;
+    flex-direction: row; /* Lado a lado em telas maiores */
+    gap: 32px;
+    order: 3; /* Ordem dos links */
+  }
+
+  .footer-links a {
+    margin: 0;
+    font-size: 15px;
+  }
+}

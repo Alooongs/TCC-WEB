@@ -1,7 +1,9 @@
 <mat-toolbar class="header-toolbar">
   <span class="logo" routerLink="/">Aloongs</span>
   <span class="spacer"></span>
-  <nav class="nav-links">
+
+  <!-- Navegação para Desktop -->
+  <nav class="nav-links-desktop">
     <a mat-button routerLink="/sobre-nos">Sobre Nós</a>
     <a mat-button routerLink="/doacao-roupas">Doação de Roupas</a>
     <a mat-button routerLink="/doacao-alimentos">Doação de Alimentos</a>
@@ -10,4 +12,26 @@
       <mat-icon>person</mat-icon>
     </button>
   </nav>
+
+  <!-- Botão de Menu para Mobile -->
+  <button mat-icon-button class="menu-button" (click)="toggleMenu()">
+    <mat-icon>{{ isMenuOpen ? "close" : "menu" }}</mat-icon>
+  </button>
 </mat-toolbar>
+
+<!-- Menu de Navegação Mobile -->
+<div class="nav-links-mobile" [class.open]="isMenuOpen">
+  <a mat-button routerLink="/sobre-nos" (click)="closeMenu()">Sobre Nós</a>
+  <a mat-button routerLink="/doacao-roupas" (click)="closeMenu()"
+    >Doação de Roupas</a
+  >
+  <a mat-button routerLink="/doacao-alimentos" (click)="closeMenu()"
+    >Doação de Alimentos</a
+  >
+  <a mat-button routerLink="/baixe-aqui" (click)="closeMenu()">Baixe o App</a>
+  <a mat-button routerLink="/suporte" (click)="closeMenu()">Suporte</a>
+  <a mat-button routerLink="/login" (click)="closeMenu()">
+    <mat-icon>person</mat-icon>
+    Login
+  </a>
+</div>

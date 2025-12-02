@@ -4,48 +4,48 @@
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  padding: 20px;
+  padding: 15px; /* Reduzido para mobile */
 }
 
 /* Hero Section */
 .hero-section {
   display: flex;
+  flex-direction: column; /* Empilhado por padrão */
   align-items: center;
-  justify-content: center;
-  gap: 50px;
-  flex-wrap: wrap;
+  text-align: center;
+  gap: 20px;
   background: linear-gradient(135deg, #004d40, #0d524b);
   border-radius: 20px;
-  padding: 60px 30px;
+  padding: 30px 20px; /* Reduzido para mobile */
   color: white;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .hero-image img {
-  width: 340px;
+  width: 220px; /* Reduzido para mobile */
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
 .hero-text {
-  max-width: 450px;
+  max-width: 100%;
 }
 
 .hero-text h1 {
-  font-size: 42px;
+  font-size: 2rem; /* Reduzido para mobile */
   margin-bottom: 15px;
 }
 
 .hero-text p {
-  font-size: 20px;
+  font-size: 1.1rem; /* Reduzido para mobile */
   margin-bottom: 25px;
 }
 
 .cta-btn {
   background: white;
   color: #004d40;
-  padding: 14px 30px;
-  font-size: 18px;
+  padding: 12px 25px; /* Reduzido para mobile */
+  font-size: 1rem; /* Reduzido para mobile */
   font-weight: bold;
   border-radius: 40px;
   border: none;
@@ -60,36 +60,38 @@
 /* Carrossel Spotlight */
 .carousel-section {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .carousel-section h2 {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   color: #004d40;
+  font-size: 1.5rem; /* Reduzido para mobile */
 }
 
 .carousel {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 25px;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .carousel-card {
   background: white;
-  padding: 30px;
+  padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-  width: 320px; /* 🔥 aumentei o tamanho */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 240px;
 }
 
 .carousel-card img {
-  width: 160px;
-  margin-bottom: 20px;
+  width: 120px; /* Reduzido para mobile */
+  margin-bottom: 15px;
 }
 
 .carousel-card p {
-  font-size: 22px;
+  font-size: 1.2rem; /* Reduzido para mobile */
   font-weight: bold;
   color: #004d40;
 }
@@ -97,13 +99,14 @@
 .arrow {
   background: #004d40;
   color: white;
-  font-size: 28px;
+  font-size: 1.5rem; /* Reduzido para mobile */
   border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px; /* Reduzido para mobile */
+  height: 40px; /* Reduzido para mobile */
   cursor: pointer;
   transition: 0.3s;
+  flex-shrink: 0;
 }
 
 .arrow:hover {
@@ -111,18 +114,29 @@
 }
 
 /* Checklist */
+.cuidados {
+  padding: 0 15px;
+}
+
+.cuidados h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #004d40;
+}
+
 .checklist {
   list-style: none;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 15px;
 }
 
 .checklist li {
   display: flex;
   align-items: center;
-  font-size: 18px;
+  font-size: 1rem; /* Reduzido para mobile */
   color: #004d40;
   font-weight: 500;
 }
@@ -135,8 +149,91 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 24px; /* Reduzido para mobile */
+  height: 24px; /* Reduzido para mobile */
   margin-right: 12px;
-  font-size: 16px;
+  font-size: 0.9rem; /* Reduzido para mobile */
+  flex-shrink: 0;
+}
+
+/* Media Query para Telas Maiores */
+@media (min-width: 768px) {
+  .doacao-container {
+    padding: 20px;
+  }
+
+  .hero-section {
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    padding: 60px 30px;
+    text-align: left;
+    margin-bottom: 60px;
+  }
+
+  .hero-image img {
+    width: 340px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero-text p {
+    font-size: 1.25rem;
+  }
+
+  .cta-btn {
+    padding: 14px 30px;
+    font-size: 1.1rem;
+  }
+
+  .carousel-section {
+    margin-bottom: 60px;
+  }
+
+  .carousel-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .carousel {
+    gap: 25px;
+  }
+
+  .carousel-card {
+    padding: 30px;
+    max-width: 320px;
+  }
+
+  .carousel-card img {
+    width: 160px;
+  }
+
+  .carousel-card p {
+    font-size: 1.4rem;
+  }
+
+  .arrow {
+    font-size: 1.8rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  .cuidados h2 {
+    font-size: 1.8rem;
+  }
+
+  .checklist {
+    gap: 18px;
+  }
+
+  .checklist li {
+    font-size: 1.1rem;
+  }
+
+  .circle {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
 }

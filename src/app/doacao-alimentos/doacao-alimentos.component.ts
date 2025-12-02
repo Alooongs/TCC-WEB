@@ -1,18 +1,22 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-doacao-alimentos',
+  standalone: true,
+  imports: [CommonModule, MatIconModule],
   templateUrl: './doacao-alimentos.component.html',
-  styleUrls: ['./doacao-alimentos.component.css']
+  styleUrls: ['./doacao-alimentos.component.css'],
 })
 export class DoacaoAlimentosComponent {
   currentIndex = 0;
 
   items = [
-    { nome: 'Arroz', img: 'assets/alimentos/arroz.png' },
-    { nome: 'Feijão', img: 'assets/alimentos/feijao.png' },
-    { nome: 'Macarrão', img: 'assets/alimentos/macarrao.png' },
-    { nome: 'Açúcares', img: 'assets/alimentos/acucar.png' }
+    { nome: 'Arroz', img: './arroz.png' },
+    { nome: 'Feijão', img: './feijao.png' },
+    { nome: 'Macarrão', img: './macarrao.png' },
+    { nome: 'Açúcares', img: './acucar.png' },
   ];
 
   prevItem() {
@@ -21,7 +25,6 @@ export class DoacaoAlimentosComponent {
   }
 
   nextItem() {
-    this.currentIndex =
-      (this.currentIndex + 1) % this.items.length;
+    this.currentIndex = (this.currentIndex + 1) % this.items.length;
   }
 }

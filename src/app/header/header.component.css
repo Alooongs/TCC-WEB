@@ -3,39 +3,40 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 32px;
-  background-color: #ffffff; /* fundo branco */
-  color: #000000; /* texto preto */
-  border-bottom: 2px solid #f2f2f2; /* linha discreta embaixo */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* sombra leve */
+  background-color: #ffffff;
+  color: #000000;
+  border-bottom: 2px solid #f2f2f2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
-  z-index: 1000; /* sempre visível ao rolar */
+  z-index: 1000;
 }
 
 .logo {
   font-weight: bold;
   font-size: 28px;
-  color: #025940; /* deixa o logo em verde */
+  color: #025940;
   letter-spacing: 1px;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
 .logo:hover {
-  transform: scale(1.05); /* efeito sutil no hover */
+  transform: scale(1.05);
 }
 
 .spacer {
   flex: 1 1 auto;
 }
 
-.nav-links {
+/* Estilos da Navegação para Desktop */
+.nav-links-desktop {
   display: flex;
   align-items: center;
-  gap: 24px; /* espaçamento uniforme */
+  gap: 24px;
 }
 
-.nav-links a {
+.nav-links-desktop a {
   font-size: 16px;
   font-weight: 500;
   color: #000000;
@@ -45,17 +46,83 @@
   transition: all 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links-desktop a:hover {
   color: #ffffff;
-  background-color: #025940; /* fundo verde no hover */
+  background-color: #025940;
 }
 
-.nav-links button {
+.nav-links-desktop button {
   color: #000000;
   transition: all 0.3s ease;
 }
 
-.nav-links button:hover {
+.nav-links-desktop button:hover {
   color: #025940;
   transform: scale(1.1);
+}
+
+/* Botão de Menu e Navegação Mobile */
+.menu-button {
+  display: none; /* Escondido por padrão */
+  color: #025940;
+}
+
+.nav-links-mobile {
+  display: none;
+  flex-direction: column;
+  background-color: #ffffff;
+  position: absolute;
+  top: 64px; /* Altura do header */
+  left: 0;
+  right: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.nav-links-mobile.open {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.nav-links-mobile a {
+  padding: 16px 32px;
+  text-align: center;
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 1px solid #f2f2f2;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links-mobile a:hover {
+  background-color: #f9f9f9;
+}
+
+.nav-links-mobile a mat-icon {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Media Query para Telas Pequenas */
+@media (max-width: 960px) {
+  .nav-links-desktop {
+    display: none; /* Esconde a navegação de desktop */
+  }
+
+  .menu-button {
+    display: block; /* Mostra o botão de menu */
+  }
+
+  .nav-links-mobile {
+    display: flex; /* Garante que o flexbox seja aplicado */
+  }
+}
+
+@media (max-width: 768px) {
+  .header-toolbar {
+    padding: 0 16px;
+  }
 }

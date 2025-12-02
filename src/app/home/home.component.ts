@@ -6,11 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MatButtonModule,
-    MatIconModule],
+  imports: [CommonModule, MatButtonModule, MatIconModule],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}
